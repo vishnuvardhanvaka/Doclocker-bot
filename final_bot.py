@@ -17,7 +17,7 @@ bot_key='5871303486:AAEiK-Gr2MVmd9pra6Bp4XWyPFJOMC--4qE'
 session = requests.Session()
 session.mount("https://", requests.adapters.HTTPAdapter(max_retries=Retry(total=5, backoff_factor=0.1, status_forcelist=[ 500, 502, 503, 504 ])))
 session.timeout = 30
-conversation_timeout=30
+conversation_timeout=180
 
 # monkey-patch the requests library
 requests.Session = lambda: session
