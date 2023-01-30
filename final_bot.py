@@ -386,7 +386,7 @@ def udocument(update,context):
         filesize=round(update.message.document.file_size/1000,4)
         file=bot.get_file(file_id)
         file_type=str(update.message.document.mime_type).split('/')[-1]
-        
+        print(file_type)
         if file_type=='x-python':
             file_type='py'
         elif file_type=='vnd.openxmlformats-officedocument.wordprocessingml.document':
@@ -466,8 +466,9 @@ def dget(update,context):
         if status==1:
             update.message.reply_text(f'''Successfully deleted ...
 
-Remaining space : {database.find_user(email)['storage']/1000} MB !
+Remaining space : {round(database.find_user(email)['storage']/1000,4)} MB !
 ''')
+            
         else:
             update.message.reply_text('file not found !')
     except KeyError:
