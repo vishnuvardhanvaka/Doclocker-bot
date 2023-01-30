@@ -72,7 +72,9 @@ def vpassword(update,context):
         update.message.reply_text('wrong password !')
         return vemail(update,context,p=1)
     update.message.reply_text(f'''Hey there {data['username']} !
+    
 Locker space : {round(data['storage']/1000,3)} MB !
+
 Hang in there Loading your files ...
                               ''')
     
