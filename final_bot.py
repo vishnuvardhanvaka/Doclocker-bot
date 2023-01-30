@@ -10,7 +10,7 @@ import random
 import smtplib
 
 key='mongodb+srv://Venkataswarao:Kvr*112218@cluster0.lqxzvm9.mongodb.net/?retryWrites=true&w=majority&ssl=true'
-bot_key='5871303486:AAES6eN0HPsqpaqxE9WmX5urpp4mauB8o7E'
+bot_key='5871303486:AAEaYo-g1lpw-Vw0OZTWkPz9PVK5OHHjbCU'
 
 
 conversation_timeout=180
