@@ -12,7 +12,7 @@ import random
 import smtplib
 
 key='mongodb+srv://Venkataswarao:Kvr*112218@cluster0.lqxzvm9.mongodb.net/?retryWrites=true&w=majority&ssl=true'
-bot_key='5871303486:AAFkLHi_s9OfdvqUrjhOHzBJKnRAAxpGoxQ'
+bot_key='5871303486:AAHwS0MX_UxpBHDbS8X0QB3vDgLQTW5Md-g'
 
 session = requests.Session()
 session.mount("https://", requests.adapters.HTTPAdapter(max_retries=Retry(total=5, backoff_factor=0.1, status_forcelist=[ 500, 502, 503, 504 ])))
