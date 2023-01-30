@@ -384,9 +384,11 @@ def udocument(update,context):
         filesize=round(update.message.document.file_size/1000,4)
         file=bot.get_file(file_id)
         file_type=str(update.message.document.mime_type).split('/')[-1]
-        print(file_type)
-        if file_type=='x-python':
+        if file_type=='webm':
+            file_type='mp4'
+        elif file_type=='x-python':
             file_type='py'
+        
         elif file_type=='vnd.openxmlformats-officedocument.wordprocessingml.document':
             file_type='docx'
         update.message.reply_text('Name the file ...')
