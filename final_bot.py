@@ -6,21 +6,17 @@ import sys
 import os
 from pymongo import MongoClient
 import re
-import requests
-from urllib3.util.retry import Retry
 import random
 import smtplib
 
 key='mongodb+srv://Venkataswarao:Kvr*112218@cluster0.lqxzvm9.mongodb.net/?retryWrites=true&w=majority&ssl=true'
 bot_key='5871303486:AAES6eN0HPsqpaqxE9WmX5urpp4mauB8o7E'
 
-session = requests.Session()
-session.mount("https://", requests.adapters.HTTPAdapter(max_retries=Retry(total=5, backoff_factor=0.1, status_forcelist=[ 500, 502, 503, 504 ])))
-session.timeout = 30
+
 conversation_timeout=180
 
 # monkey-patch the requests library
-requests.Session = lambda: session
+
 updater=Updater(bot_key,use_context=True)
 bot=updater.bot
 
@@ -468,6 +464,19 @@ def dget(update,context):
 
 Remaining space : {round(database.find_user(email)['storage']/1000,4)} MB !
 ''')
+            update.message.reply_text('Remaining locker files are ....')
+            files=database.find_files(context.user_data['email'])
+            if len(files['filename'])!=0:
+                
+                for i,(file_name,file_size) in enumerate(zip(files['filename'],files['sizes'])):
+                    update.message.reply_text(f'{i+1}.  {file_name}')
+                    context.user_data[str(i+1)]=file_name
+                    context.user_data[file_name]=str(i+1)
+            else:
+                update.message.reply_text('Locker is Empty !')
+                update.message.reply_text('upload files using : /upload')
+                return cancel(update,context)
+            
             
         else:
             update.message.reply_text('file not found !')
@@ -561,15 +570,3 @@ def main():
     except Exception as e:
         print(e)
 main()
-
-
-
-
-
-
-
-
-
-
-
-
