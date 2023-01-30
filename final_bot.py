@@ -146,7 +146,7 @@ def send_otp(email):
 
 def register(update,context):
     storage=database.total_storage()
-    if storage>=512:
+    if storage>=450:
         update.message.reply_text('Sorry no more lockers are available ... !')
         return cancel(update,context)
     
