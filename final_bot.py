@@ -502,7 +502,7 @@ def main():
             },
         fallbacks=[MessageHandler(Filters.command,cancel)],
         allow_reentry=True,
-        conversation_timeout=250
+        conversation_timeout=conversation_timeout
         )
     delete_conv=ConversationHandler(
         entry_points=[CommandHandler('delete',delete)],
