@@ -61,6 +61,7 @@ def vemail(update,context,p=0):
         while data==None:
             update.message.reply_text('''user not found !
 Enter Registered Mail Id ..
+New user ? ( /register ) ...
 ''')
             return EMAIL
         update.message.reply_text('Enter password ...')
