@@ -109,24 +109,5 @@ def upload_file(filename,filesize,data,email):
     except Exception as e:
         print(e)
         return 0
-
-
-
-
-
-
     
     
-    
-
-
-
-
-
-
-
-
-
-
-
-
