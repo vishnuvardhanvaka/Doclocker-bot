@@ -33,8 +33,9 @@ def clear(update,context):
     chat_id=update.message.chat_id
     try:
         context.bot.delete_message(chat_id,update.message.message_id+1)
-        for i in range(1000):
-            context.bot.delete_message(chat_id,update.message.message_id-i)   
+        for msg in update.message.chat.get_history(limit=None):
+            context.bot.delete_message(chat_id=chat_id,message_id=msg.message_id)
+            
         
     except Exception as e:
         pass
