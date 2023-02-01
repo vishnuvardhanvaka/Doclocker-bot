@@ -26,7 +26,7 @@ DELETE,DEMAIL,DPASSWORD,DFILES,DGET=range(5,10)
 FEMAIL,FVERIFY,FPASSWORD=range(21,24)
 UPLOAD,UEMAIL,UPASSWORD,RUPLOAD,UFILE=range(31,36)
 def cancel(update,context):
-    #update.message.reply_text('conversation ended ...')
+    update.message.reply_text('conversation ended ...')
     return ConversationHandler.END
 def clear(update,context):
     update.message.reply_text('clearing ...')
