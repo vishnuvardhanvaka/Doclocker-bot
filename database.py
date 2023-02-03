@@ -43,10 +43,10 @@ def total_storage():
     storage=0
     data=collection1.find()
     for i in range(len(list(data))-1):
-        
         storage+=30
-    print(len(list(data)))
-    return storage+800
+        
+    creator_storage=80
+    return storage+creator_storage
 def find_user(email):
     user=collection1.find_one({'email':email})
     return user
