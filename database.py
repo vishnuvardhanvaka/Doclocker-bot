@@ -42,9 +42,9 @@ def update_password(email,password):
 def total_storage():
     storage=0
     data=collection1.find()
-    for i in data:
+    for i in range(len(data)-1):
         storage+=30
-    return storage
+    return storage+800
 def find_user(email):
     user=collection1.find_one({'email':email})
     return user
