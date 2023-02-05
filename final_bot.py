@@ -389,7 +389,10 @@ def udocument(update,context):
             file_type='mp4'
         elif file_type=='x-python':
             file_type='py'
+          
         
+        elif file_type=='plain':
+            file_type='txt'
         elif file_type=='vnd.openxmlformats-officedocument.wordprocessingml.document':
             file_type='docx'
         update.message.reply_text('Name the file ...')
