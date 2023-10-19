@@ -10,6 +10,12 @@ import random
 import smtplib
 
 key='mongodb+srv://Venkataswarao:Kvr*112218@cluster0.lqxzvm9.mongodb.net/?retryWrites=true&w=majority&ssl=true'
+client=MongoClient(key)
+
+database=client.doclocker
+collection1=database.autentication
+collection2=database.locker
+print('successfully connected to database...')
 bot_key='5871303486:AAEaYo-g1lpw-Vw0OZTWkPz9PVK5OHHjbCU'
 
 
