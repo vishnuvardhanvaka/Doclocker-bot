@@ -1,1 +1,1 @@
-worker : python final_bot.py
+web: python final_bot.py
